@@ -1,6 +1,7 @@
 package com.pc1.pc1.MentorSlot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +12,7 @@ public class MentorSlotController {
         this.service=service;
     }
     @PostMapping
-    SlotResponseDTO create(SlotRequestDTO request){
-        return service.create(request);
+    ResponseEntity<SlotResponseDTO> create(SlotRequestDTO request){
+        return ResponseEntity.ok().body(service.create(request));
     }
 }

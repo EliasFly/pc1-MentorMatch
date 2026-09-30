@@ -19,4 +19,7 @@ public class MentorSlotService {
         savedSlot.setStatus("AVAILABLE");
         return modelMapper.map(savedSlot,SlotResponseDTO.class);
     }
+    List<SlotResponseDTO> list(){
+        return
+    }
 }

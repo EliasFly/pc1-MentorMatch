@@ -1,6 +1,7 @@
 package com.pc1.pc1.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +12,7 @@ public class UserController {
         this.service=service;
     }
     @PostMapping
-    UserResponseDTO register(UserRequestDTO request){
-        return service.register(request);
+    ResponseEntity<UserResponseDTO> register(UserRequestDTO request){
+        return ResponseEntity.ok().body(service.register(request));
     }
 }
