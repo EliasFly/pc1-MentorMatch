@@ -16,6 +16,7 @@ public class MentorSlotService {
     SlotResponseDTO create(SlotRequestDTO request){
         MentorSlot slot=modelMapper.map(request,MentorSlot.class);
         MentorSlot savedSlot=repository.save(slot);
+        savedSlot.setStatus("AVAILABLE");
         return modelMapper.map(savedSlot,SlotResponseDTO.class);
     }
 }
